@@ -300,9 +300,6 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 ---
 
 ## GITHUB STATISTICS
-
-## GITHUB STATISTICS
-
 <div align="center">
 
 <sub>LIVE GITHUB STATISTICS · ALL REPOSITORIES</sub>
@@ -321,7 +318,6 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 </table>
 
 <br/>
-
 <img src="https://streak-stats.demolab.com?user=ArditCeno&hide_border=true&background=111217&ring=EF223C&fire=EF223C&currStreakLabel=EF223C&sideLabels=DFE5EB&dates=9AA3AE&currStreakNum=DFE5EB&sideNums=DFE5EB&v=1" width="80%" alt="GitHub Streak"/>
 
 </div>
