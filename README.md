@@ -21,106 +21,27 @@
 <sub>TIRANA, ALBANIA · SOFTWARE ENGINEERING · TECHNOLOGY</sub>
 
 </div>
-
-align="center">
-
-
-
 <img src="https://capsule-render.vercel.app/api?type=rect&height=6&color=EF223C" width="100%"/>
 
-
-
 ```text
+   █████╗ ██████╗ ██████╗ ██╗████████╗
+   ██╔══██╗██╔══██╗██╔══██╗██║╚══██╔══╝
+███████║██████╔╝██║  ██║██║   ██║
+██╔══██║██╔══██╗██║  ██║██║   ██║
+██║  ██║██║  ██║██████╔╝██║   ██║
+╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝   ╚═╝
 
-█████╗ ██████╗ ██████╗ ██╗████████╗
-
-██╔══██╗██╔══██╗██╔══██╗██║╚══██╔══╝
-
-███████║██████╔╝██║ ██║██║ ██║
-
-██╔══██║██╔══██╗██║ ██║██║ ██║
-
-██║ ██║██║ ██║██████╔╝██║ ██║
-
-╚═╝ ╚═╝╚═╝ ╚═╝╚═════╝ ╚═╝ ╚═╝
-
-
-
-██████╗ ███████╗███╗ ██╗ ██████╗
-
-██╔════╝ ██╔════╝████╗ ██║██╔═══██╗
-
-██║ █████╗ ██╔██╗ ██║██║ ██║
-
-██║ ██╔══╝ ██║╚██╗██║██║ ██║
-
+██████╗ ███████╗███╗   ██╗ ██████╗
+██╔════╝ ██╔════╝████╗  ██║██╔═══██╗
+██║      █████╗  ██╔██╗ ██║██║   ██║
+██║      ██╔══╝  ██║╚██╗██║██║   ██║
 ╚██████╗ ███████╗██║ ╚████║╚██████╔╝
-
-╚═════╝ ╚══════╝╚═╝ ╚═══╝ ╚═════╝
-
-```
-
-
-
-### SOFTWARE ENGINEER · DEVELOPER · BUILDER
-
-
-
-**Building intelligent systems. Engineering meaningful experiences.**
-
-
-
-<br/>
-
-
-
-<a href="https://arditceno.vercel.app/">
-
-<img src="https://img.shields.io/badge/PORTFOLIO-DFE5EB?style=for-the-badge&logo=vercel&logoColor=111217"/>
-
-</a>
-
-<a href="https://www.linkedin.com/in/ardit-ceno-a674b5307/">
-
-<img src="https://img.shields.io/badge/LINKEDIN-DFE5EB?style=for-the-badge&logo=linkedin&logoColor=111217"/>
-
-</a>
-
-<a href="https://github.com/ArditCeno">
-
-<img src="https://img.shields.io/badge/GITHUB-EF223C?style=for-the-badge&logo=github&logoColor=white"/>
-
-</a>
-
-
-
-<br/>
-
-
-
-<sub>TIRANA, ALBANIA · SOFTWARE ENGINEERING · TECHNOLOGY</sub>
-
-
-
-</div>
-
-
-
----
-
-
+ ╚═════╝ ╚══════╝╚═╝  ╚═══╝ ╚═════╝
 
 ## ABOUT ME
 
-
-
 I'm **Ardit Ceno**, a software developer passionate about technology, software engineering, artificial intelligence, and building meaningful digital experiences.
-
-
-
 I enjoy exploring new technologies, solving complex problems, and transforming ideas into functional applications.
-
-
 
 My areas of interest include:
 
