@@ -306,72 +306,53 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 ---
 
 
-
 ## GITHUB STATISTICS
-
-
 
 <div align="center">
 
-
-
-<sub>LIVE GITHUB STATISTICS · PUBLIC REPOSITORIES</sub>
-
-
+<sub>LIVE GITHUB STATISTICS · ALL REPOSITORIES</sub>
 
 <br/><br/>
 
-
-
-<img src="https://github-readme-stats.vercel.app/api?username=ArditCeno&show_icons=true&include_all_commits=true&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&icon_color=EF223C&rank_icon=github" width="100%" alt="Ardit Ceno GitHub Statistics"/>
-
-
+<a href="assets/grafik.html">
+  <img src="https://github-readme-stats.vercel.app/api?username=ArditCeno&show_icons=true&include_all_commits=true&count_private=true&cache_seconds=1800&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&icon_color=EF223C&rank_icon=github" width="100%" alt="Ardit Ceno GitHub Statistics"/>
+</a>
 
 <br/><br/>
 
-
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArditCeno&layout=compact&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&langs_count=10" width="100%" alt="Most Used Languages"/>
-
-
+<a href="assets/grafik.html">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArditCeno&layout=compact&count_private=true&cache_seconds=1800&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&langs_count=10" width="100%" alt="Most Used Languages"/>
+</a>
 
 <br/><br/>
 
-
-
-<img src="https://streak-stats.demolab.com?user=ArditCeno&hide_border=true&background=111217&ring=EF223C&fire=EF223C&currStreakLabel=EF223C&sideLabels=DFE5EB&dates=9AA3AE&currStreakNum=DFE5EB&sideNums=DFE5EB" width="100%" alt="GitHub Streak"/>
-
-
+<a href="assets/grafik.html">
+  <img src="https://streak-stats.demolab.com?user=ArditCeno&hide_border=true&background=111217&ring=EF223C&fire=EF223C&currStreakLabel=EF223C&sideLabels=DFE5EB&dates=9AA3AE&currStreakNum=DFE5EB&sideNums=DFE5EB" width="100%" alt="GitHub Streak"/>
+</a>
 
 </div>
 
-
-
 ---
-
-
 
 ## CONTRIBUTION ACTIVITY
 
-
-
 <div align="center">
+
 <sub>MY DEVELOPMENT ACTIVITY OVER TIME</sub>
 
 <br/><br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=ArditCeno&bg_color=111217&color=DFE5EB&line=EF223C&point=DFE5EB&area=true&hide_border=true&custom_title=ARDIT%20CENO%20-%20CONTRIBUTION%20ACTIVITY" width="100%" alt="Ardit Ceno Contribution Activity"/>
+<a href="assets/grafik.html">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ArditCeno&bg_color=111217&color=DFE5EB&line=EF223C&point=DFE5EB&area=true&hide_border=true&custom_title=ARDIT%20CENO%20-%20CONTRIBUTION%20ACTIVITY" width="100%" alt="Ardit Ceno Contribution Activity"/>
+</a>
 
-<br/>
+<br/><br/>
 
 <a href="https://github.com/ArditCeno">
-
-<img src="https://img.shields.io/badge/EXPLORE%20MY%20GITHUB-EF223C?style=for-the-badge&logo=github&logoColor=white"/>
-
+  <img src="https://img.shields.io/badge/EXPLORE%20MY%20GITHUB-EF223C?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
 
 </div>
----
 
 ## CONNECT WITH ME
 
