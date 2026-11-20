@@ -314,21 +314,15 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 
 <br/><br/>
 
-<a href="assets/grafe.html">
-  <img src="https://github-readme-stats.vercel.app/api?username=ArditCeno&show_icons=true&include_all_commits=true&count_private=true&cache_seconds=1800&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&icon_color=EF223C&rank_icon=github" width="100%" alt="Ardit Ceno GitHub Statistics"/>
-</a>
+<img src="https://github-readme-stats.vercel.app/api?username=ArditCeno&show_icons=true&include_all_commits=true&count_private=true&cache_seconds=1800&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&icon_color=EF223C&rank_icon=github" width="100%" alt="Ardit Ceno GitHub Statistics"/>
 
 <br/><br/>
 
-<a href="assets/grafe.html">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArditCeno&layout=compact&count_private=true&cache_seconds=1800&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&langs_count=10" width="100%" alt="Most Used Languages"/>
-</a>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArditCeno&layout=compact&count_private=true&cache_seconds=1800&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&langs_count=10" width="100%" alt="Most Used Languages"/>
 
 <br/><br/>
 
-<a href="assets/grafe.html">
-  <img src="https://streak-stats.demolab.com?user=ArditCeno&hide_border=true&background=111217&ring=EF223C&fire=EF223C&currStreakLabel=EF223C&sideLabels=DFE5EB&dates=9AA3AE&currStreakNum=DFE5EB&sideNums=DFE5EB" width="100%" alt="GitHub Streak"/>
-</a>
+<img src="https://streak-stats.demolab.com?user=ArditCeno&hide_border=true&background=111217&ring=EF223C&fire=EF223C&currStreakLabel=EF223C&sideLabels=DFE5EB&dates=9AA3AE&currStreakNum=DFE5EB&sideNums=DFE5EB" width="100%" alt="GitHub Streak"/>
 
 </div>
 
@@ -342,9 +336,7 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 
 <br/><br/>
 
-<a href="assets/grafe.html">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ArditCeno&bg_color=111217&color=DFE5EB&line=EF223C&point=DFE5EB&area=true&hide_border=true&custom_title=ARDIT%20CENO%20-%20CONTRIBUTION%20ACTIVITY" width="100%" alt="Ardit Ceno Contribution Activity"/>
-</a>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=ArditCeno&bg_color=111217&color=DFE5EB&line=EF223C&point=DFE5EB&area=true&hide_border=true&custom_title=ARDIT%20CENO%20-%20CONTRIBUTION%20ACTIVITY" width="100%" alt="Ardit Ceno Contribution Activity"/>
 
 <br/><br/>
 
@@ -354,6 +346,35 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 
 </div>
 
+## CONNECT WITH ME
+
+<div align="center">
+
+### LET'S BUILD SOMETHING MEANINGFUL.
+
+Always interested in technology, engineering, creative ideas, and meaningful collaborations.
+
+<br/>
+
+<a href="https://arditceno.vercel.app/">
+  <img src="https://img.shields.io/badge/PORTFOLIO-DFE5EB?style=for-the-badge&logo=vercel&logoColor=111217"/>
+</a>
+
+<a href="https://www.linkedin.com/in/ardit-ceno-a674b5307/">
+  <img src="https://img.shields.io/badge/LINKEDIN-DFE5EB?style=for-the-badge&logo=linkedin&logoColor=111217"/>
+</a>
+
+<a href="https://github.com/ArditCeno">
+  <img src="https://img.shields.io/badge/GITHUB-EF223C?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
+
+<br/><br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&height=5&color=EF223C" width="100%"/>
+
+# ARDIT CENO
+
+</div>
 ## CONNECT WITH ME
 
 <div align="center">
