@@ -123,7 +123,7 @@ A software development project associated with my Vodafone Albania internship ex
 <br/>
 
 <a href="https://vodafone-al-internship.onrender.com">
-src="./assets/tobi.svg"
+<img src="https://img.shields.io/badge/VISIT%20PROJECT-EF223C?style=for-the-badge&logo=googlechrome&logoColor=white"/>
 </a>
 
 </div>
