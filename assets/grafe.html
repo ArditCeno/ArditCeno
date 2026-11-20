@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ardit Ceno — Software Engineer · Live GitHub Analytics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: '#0d0e12',
+            card: '#111217',
+            cardHover: '#161820',
+            crimson: '#EF223C',
+            crimsonDark: '#b81429',
+            frost: '#DFE5EB',
+            slateMuted: '#9AA3AE',
+            borderDark: '#1e212b'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #0d0e12;
+      color: #DFE5EB;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #0d0e12; }
+    ::-webkit-scrollbar-thumb { background: #232734; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #EF223C; }
+    .ascii-glow { text-shadow: 0 0 24px rgba(239, 34, 60, 0.28); }
+    .card-surface {
+      background-color: #111217;
+      border: 1px solid #1e212b;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card-surface:hover {
+      border-color: rgba(239, 34, 60, 0.45);
+      box-shadow: 0 10px 30px -12px rgba(239, 34, 60, 0.15);
+    }
+    .progress-ring-circle {
+      transition: stroke-dashoffset 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.85); }
+    }
+    .live-dot { animation: pulseDot 2s infinite ease-in-out; }
+  </style>
+</head>
+<body class="antialiased selection:bg-crimson selection:text-white">
+
+  <!-- TOP CONTROL BAR -->
+  <header class="sticky top-0 z-40 bg-[#0d0e12]/90 backdrop-blur-md border-b border-borderDark">
+    <div class="h-1.5 w-full bg-crimson"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span id="statusIndicator" class="w-2.5 h-2.5 rounded-full bg-emerald-400 live-dot"></span>
+        <div class="text-xs sm:text-sm font-mono">
+          <span class="text-slateMuted">GITHUB API:</span>
+          <span id="apiStatusText" class="text-frost font-semibold">LIVE · @ArditCeno</span>
+          <span id="dataScopeBadge" class="ml-2 px-2 py-0.5 text-[11px] rounded bg-crimson/15 text-crimson border border-crimson/30">
+            ALL REPOSITORIES
+          </span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <div class="inline-flex rounded-lg bg-card p-1 border border-borderDark text-xs font-mono">
+          <button id="btnScopeAll" onclick="setScope('all')" class="px-2.5 py-1.5 rounded-md bg-crimson text-white font-semibold transition">
+            All (Public + Private)
+          </button>
+          <button id="btnScopePublic" onclick="setScope('public')" class="px-2.5 py-1.5 rounded-md text-slateMuted hover:text-frost transition">
+            Public Only
+          </button>
+        </div>
+
+        <button onclick="openTokenModal()" class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-card hover:bg-cardHover border border-borderDark hover:border-crimson/50 text-xs font-mono text-frost transition">
+          <svg class="w-4 h-4 text-crimson" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+          </svg>
+          <span class="hidden sm:inline" id="tokenBtnLabel">Configure GitHub Token</span>
+          <span class="sm:hidden">Token</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 pb-20 space-y-20">
+
+    <!-- HERO HEADER -->
+    <section class="pt-10 sm:pt-14 text-center flex flex-col items-center">
+      <div class="w-full overflow-x-auto flex justify-center mb-6">
+        <pre class="font-mono text-[9px] sm:text-xs md:text-sm leading-tight text-frost ascii-glow select-none text-left inline-block">
+   █████╗ ██████╗ ██████╗ ██╗████████╗      ██████╗███████╗███╗   ██╗ ██████╗ 
+  ██╔══██╗██╔══██╗██╔══██╗██║╚══██╔══╝     ██╔════╝██╔════╝████╗  ██║██╔═══██╗
+  ███████║██████╔╝██║  ██║██║   ██║        ██║     █████╗  ██╔██╗ ██║██║   ██║
+  ██╔══██║██╔══██╗██║  ██║██║   ██║        ██║     ██╔══╝  ██║╚██╗██║██║   ██║
+  ██║  ██║██║  ██║██████╔╝██║   ██║        ╚██████╗███████╗██║ ╚████║╚██████╔╝
+  ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝   ╚═╝         ╚═════╝╚══════╝╚═╝  ╚═══╝ ╚═════╝ </pre>
+      </div>
+
+      <h1 class="text-lg sm:text-xl md:text-2xl font-bold tracking-[0.22em] text-frost uppercase">
+        SOFTWARE ENGINEER · DEVELOPER · BUILDER
+      </h1>
+
+      <p class="mt-3 text-base sm:text-lg text-slateMuted max-w-2xl font-medium">
+        Building intelligent systems. <span class="text-frost font-semibold">Engineering meaningful experiences.</span>
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+        <a href="https://arditceno.vercel.app/" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-lg bg-frost text-[#111217] font-mono text-xs sm:text-sm font-bold tracking-wider hover:bg-white transition shadow-lg">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 19.777h20L12 2z"/></svg>
+          PORTFOLIO
+        </a>
+        <a href="https://www.linkedin.com/in/ardit-ceno-a674b5307/" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-lg bg-frost text-[#111217] font-mono text-xs sm:text-sm font-bold tracking-wider hover:bg-white transition shadow-lg">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          LINKEDIN
+        </a>
+        <a href="https://github.com/ArditCeno" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-lg bg-crimson text-white font-mono text-xs sm:text-sm font-bold tracking-wider hover:bg-crimsonDark transition shadow-lg shadow-crimson/25">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          GITHUB
+        </a>
+      </div>
+
+      <p class="mt-6 font-mono text-xs tracking-[0.2em] text-slateMuted uppercase">
+        TIRANA, ALBANIA · SOFTWARE ENGINEERING · TECHNOLOGY
+      </p>
+    </section>
+
+    <!-- ABOUT ME -->
+    <section id="about" class="space-y-6">
+      <div class="border-b border-borderDark pb-3 flex items-center justify-between">
+        <h2 class="text-xl sm:text-2xl font-bold tracking-wider text-frost uppercase">ABOUT ME</h2>
+        <span class="font-mono text-xs text-crimson">01 // PROFILE</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <div class="lg:col-span-6 card-surface rounded-xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+          <div class="space-y-4 text-slateMuted leading-relaxed text-sm sm:text-base">
+            <p>
+              I'm <strong class="text-frost font-semibold">Ardit Ceno</strong>, a software developer passionate about technology, software engineering, artificial intelligence, and building meaningful digital experiences.
+            </p>
+            <p>
+              I enjoy exploring new technologies, solving complex problems, and transforming ideas into functional applications.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="font-mono text-xs tracking-widest text-frost uppercase mb-3">AREAS OF INTEREST</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div class="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-obsidian border border-borderDark text-xs sm:text-sm text-frost"><span class="w-1.5 h-1.5 rounded-full bg-crimson"></span> Software Engineering</div>
+              <div class="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-obsidian border border-borderDark text-xs sm:text-sm text-frost"><span class="w-1.5 h-1.5 rounded-full bg-crimson"></span> Artificial Intelligence</div>
+              <div class="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-obsidian border border-borderDark text-xs sm:text-sm text-frost"><span class="w-1.5 h-1.5 rounded-full bg-crimson"></span> Full-Stack Development</div>
+              <div class="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-obsidian border border-borderDark text-xs sm:text-sm text-frost"><span class="w-1.5 h-1.5 rounded-full bg-crimson"></span> Backend Development</div>
+              <div class="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-obsidian border border-borderDark text-xs sm:text-sm text-frost"><span class="w-1.5 h-1.5 rounded-full bg-crimson"></span> 3D Development</div>
+              <div class="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-obsidian border border-borderDark text-xs sm:text-sm text-frost"><span class="w-1.5 h-1.5 rounded-full bg-crimson"></span> Data & Intelligent Systems</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 card-surface rounded-xl overflow-hidden flex flex-col">
+          <div class="bg-[#161820] px-4 py-3 border-b border-borderDark flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-crimson"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-400/80"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-400/80"></span>
+              <span class="ml-2 font-mono text-xs text-slateMuted">ArditCeno.java</span>
+            </div>
+            <button onclick="copyJavaCode()" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-obsidian hover:bg-crimson text-xs font-mono text-frost transition border border-borderDark">
+              <span id="copyJavaText">Copy</span>
+            </button>
+          </div>
+          <pre id="javaCodeBlock" class="p-5 sm:p-6 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto flex-1 text-frost"><code><span class="text-crimson font-semibold">public class</span> <span class="text-sky-400 font-semibold">ArditCeno</span> {
+
+    <span class="text-sky-300">String</span> name = <span class="text-emerald-400">"Ardit Ceno"</span>;
+    <span class="text-sky-300">String</span> role = <span class="text-emerald-400">"Software Developer"</span>;
+    <span class="text-sky-300">String</span> location = <span class="text-emerald-400">"Tirana, Albania"</span>;
+
+    <span class="text-sky-300">String</span>[] interests = {
+        <span class="text-emerald-400">"Software Engineering"</span>,
+        <span class="text-emerald-400">"Artificial Intelligence"</span>,
+        <span class="text-emerald-400">"Full-Stack Development"</span>,
+        <span class="text-emerald-400">"3D Development"</span>,
+        <span class="text-emerald-400">"Backend Engineering"</span>
+    };
+
+    <span class="text-sky-300">String</span> philosophy =
+        <span class="text-emerald-400">"Build with purpose. Engineer with precision."</span>;
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS + ALL REPOSITORIES -->
+    <section id="projects" class="space-y-8">
+      <div class="border-b border-borderDark pb-3 flex flex-wrap items-center justify-between gap-2">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold tracking-wider text-frost uppercase">FEATURED PROJECTS</h2>
+          <p class="font-mono text-xs text-slateMuted mt-1">SELECTED WORK · PROJECTS · ENGINEERING</p>
+        </div>
+        <span class="font-mono text-xs text-crimson">02 // SHOWCASE</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <article class="card-surface rounded-xl p-6 sm:p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <img src="https://arditceno.github.io/Neuro-Cognitive-Information-Design/assets/logo.png" alt="NCID" class="w-12 h-12 rounded-xl object-contain bg-obsidian p-1.5 border border-borderDark" onerror="this.style.display='none'"/>
+              <span class="font-mono text-xs text-slateMuted">01 / INFORMATION DESIGN</span>
+            </div>
+            <h3 class="text-lg font-bold text-frost tracking-wide">NEURO-COGNITIVE INFORMATION DESIGN</h3>
+            <p class="mt-3 text-sm text-slateMuted leading-relaxed">An interactive digital experience exploring neuro-cognitive information design, human cognition, and the presentation of information.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-borderDark/60 flex items-center justify-between">
+            <span class="font-mono text-xs text-slateMuted">UI/UX · COGNITIVE SCIENCE</span>
+            <a href="https://arditceno.github.io/Neuro-Cognitive-Information-Design/" target="_blank" class="px-4 py-2 rounded-lg bg-crimson hover:bg-crimsonDark text-white font-mono text-xs font-bold tracking-wider transition">VISIT PROJECT →</a>
+          </div>
+        </article>
+
+        <article class="card-surface rounded-xl p-6 sm:p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <img src="tobi.svg" alt="TOBI Robot" class="w-12 h-12 rounded-xl object-contain bg-obsidian p-1.5 border border-borderDark" onerror="this.style.display='none'"/>
+              <span class="font-mono text-xs text-slateMuted">02 / INTERNSHIP PROJECT</span>
+            </div>
+            <h3 class="text-lg font-bold text-frost tracking-wide">VODAFONE ALBANIA</h3>
+            <p class="mt-3 text-sm text-slateMuted leading-relaxed">A software development project associated with my Vodafone Albania internship experience.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-borderDark/60 flex items-center justify-between">
+            <span class="font-mono text-xs text-slateMuted">ENTERPRISE · FULL-STACK</span>
+            <a href="https://vodafone-al-internship.onrender.com" target="_blank" class="px-4 py-2 rounded-lg bg-crimson hover:bg-crimsonDark text-white font-mono text-xs font-bold tracking-wider transition">VISIT PROJECT →</a>
+          </div>
+        </article>
+
+        <article class="card-surface rounded-xl p-6 sm:p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <img src="https://geo-sentinel-landing-page.vercel.app/logo.png" alt="GeoSentinel" class="w-12 h-12 rounded-xl object-contain bg-obsidian p-1.5 border border-borderDark" onerror="this.style.display='none'"/>
+              <span class="font-mono text-xs text-slateMuted">03 / GEOSPATIAL TECHNOLOGY</span>
+            </div>
+            <h3 class="text-lg font-bold text-frost tracking-wide">GEOSENTINEL</h3>
+            <p class="mt-3 text-sm text-slateMuted leading-relaxed">A satellite-powered trail security experience focused on geospatial information and environmental risk awareness.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-borderDark/60 flex items-center justify-between">
+            <span class="font-mono text-xs text-slateMuted">SATELLITE · GEOSPATIAL</span>
+            <a href="https://geo-sentinel-landing-page.vercel.app/" target="_blank" class="px-4 py-2 rounded-lg bg-crimson hover:bg-crimsonDark text-white font-mono text-xs font-bold tracking-wider transition">VISIT PROJECT →</a>
+          </div>
+        </article>
+
+        <article class="card-surface rounded-xl p-6 sm:p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <span class="px-3 py-1.5 rounded bg-frost text-[#111217] font-mono text-xs font-bold">CLOSET.AI</span>
+              <span class="font-mono text-xs text-slateMuted">04 / AI · 3D · FASHION TECHNOLOGY</span>
+            </div>
+            <h3 class="text-lg font-bold text-frost tracking-wide">CLOSETAI</h3>
+            <p class="mt-3 text-sm text-slateMuted leading-relaxed">An AI-powered digital wardrobe combining 3D experiences, clothing recognition, wardrobe organization, and personalized styling.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-borderDark/60 flex items-center justify-between">
+            <span class="font-mono text-xs text-slateMuted">AI · THREE.JS · FULL-STACK</span>
+            <a href="https://github.com/ArditCeno/ClosetAI" target="_blank" class="px-4 py-2 rounded-lg bg-crimson hover:bg-crimsonDark text-white font-mono text-xs font-bold tracking-wider transition">VIEW SOURCE →</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- LIVE REPOSITORIES LIST -->
+      <div class="card-surface rounded-xl p-6 sm:p-7 space-y-5">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h3 class="text-base sm:text-lg font-bold tracking-wider text-frost uppercase flex items-center gap-2.5">
+              ALL REPOSITORIES
+              <span id="repoCountBadge" class="px-2.5 py-0.5 text-xs font-mono rounded-full bg-crimson/20 text-crimson border border-crimson/30">0</span>
+            </h3>
+            <p class="font-mono text-xs text-slateMuted mt-1">LIVE FETCHED FROM GITHUB API · PUBLIC & PRIVATE</p>
+          </div>
+          <div id="repoLanguageFilters" class="flex flex-wrap items-center gap-2 font-mono text-xs"></div>
+        </div>
+        <div id="repositoriesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- TECHNOLOGY STACK -->
+    <section id="stack" class="space-y-6">
+      <div class="border-b border-borderDark pb-3 flex flex-wrap items-center justify-between gap-2">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold tracking-wider text-frost uppercase">TECHNOLOGY STACK</h2>
+          <p class="font-mono text-xs text-slateMuted mt-1">TECHNOLOGIES AND DEVELOPMENT ECOSYSTEM</p>
+        </div>
+        <span class="font-mono text-xs text-crimson">03 // ECOSYSTEM</span>
+      </div>
+      <div id="techStackContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+    </section>
+
+    <!-- GITHUB STATISTICS -->
+    <section id="stats" class="space-y-6">
+      <div class="border-b border-borderDark pb-3 flex flex-wrap items-center justify-between gap-2">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold tracking-wider text-frost uppercase">GITHUB STATISTICS</h2>
+          <p id="statsScopeSubtitle" class="font-mono text-xs text-slateMuted mt-1">LIVE GITHUB STATISTICS · ALL REPOSITORIES</p>
+        </div>
+        <span class="font-mono text-xs text-crimson">04 // TELEMETRY</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div class="lg:col-span-7 card-surface rounded-xl p-6 sm:p-8 flex flex-col justify-between">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-xl sm:text-2xl font-bold text-frost tracking-tight">Ardit Ceno's GitHub Stats</h3>
+            <span id="statsDataSourceTag" class="font-mono text-[11px] px-2.5 py-1 rounded bg-obsidian border border-borderDark text-slateMuted">LIVE</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
+            <div class="sm:col-span-7 space-y-3.5 font-mono text-sm">
+              <div class="flex items-center justify-between">
+                <span class="text-frost font-medium">★ Total Stars Earned:</span>
+                <span id="statStars" class="font-bold text-frost">17</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-frost font-medium">↻ Total Commits:</span>
+                <span id="statCommits" class="font-bold text-frost">665</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-frost font-medium">⇄ Total PRs:</span>
+                <span id="statPRs" class="font-bold text-frost">17</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-frost font-medium">! Total Issues:</span>
+                <span id="statIssues" class="font-bold text-frost">0</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-frost font-medium">▣ Total Repositories:</span>
+                <span id="statRepos" class="font-bold text-frost">18</span>
+              </div>
+            </div>
+
+            <div class="sm:col-span-5 flex flex-col items-center justify-center">
+              <div class="relative w-32 h-32 flex items-center justify-center">
+                <svg class="w-32 h-32" viewBox="0 0 120 120">
+                  <circle cx="60" cy="60" r="48" stroke="#262a36" stroke-width="8" fill="none" />
+                  <circle id="rankProgressCircle" class="progress-ring-circle" cx="60" cy="60" r="48"
+                          stroke="#EF223C" stroke-width="8" stroke-linecap="round" fill="none"
+                          stroke-dasharray="301.59" stroke-dashoffset="54" />
+                </svg>
+                <div class="absolute inset-0 flex flex-col items-center justify-center">
+                  <span class="font-mono text-xs font-bold text-crimson">RANK A+</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 card-surface rounded-xl p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg sm:text-xl font-bold text-frost">Most Used Languages</h3>
+              <span class="font-mono text-xs text-slateMuted">ALL REPOS</span>
+            </div>
+            <div id="languageProgressBar" class="w-full h-3 rounded-full bg-obsidian overflow-hidden flex gap-0.5 mb-6"></div>
+            <div id="languageBreakdownList" class="grid grid-cols-2 gap-x-4 gap-y-3 font-mono text-xs"></div>
+          </div>
+          <p class="mt-6 pt-3 border-t border-borderDark/60 font-mono text-[11px] text-slateMuted">
+            Calculated across all public & private repositories.
+          </p>
+        </div>
+      </div>
+
+      <!-- Streak Card -->
+      <div class="card-surface rounded-xl p-6 sm:p-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center items-center">
+        <div>
+          <p id="streakTotal" class="text-3xl font-extrabold text-frost font-mono">665</p>
+          <p class="text-xs font-mono text-slateMuted uppercase mt-1">Total Contributions</p>
+        </div>
+        <div class="md:border-x border-borderDark py-2">
+          <div class="w-20 h-20 mx-auto rounded-full border-4 border-crimson flex items-center justify-center">
+            <span id="streakCurrent" class="text-2xl font-extrabold text-frost font-mono">14</span>
+          </div>
+          <p class="text-xs font-mono text-crimson font-bold uppercase mt-2">Current Streak (Days)</p>
+        </div>
+        <div>
+          <p id="streakLongest" class="text-3xl font-extrabold text-frost font-mono">29</p>
+          <p class="text-xs font-mono text-slateMuted uppercase mt-1">Longest Streak (Days)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTRIBUTION ACTIVITY GRAPH -->
+    <section id="activity" class="space-y-6">
+      <div class="border-b border-borderDark pb-3 flex flex-wrap items-center justify-between gap-2">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold tracking-wider text-frost uppercase">CONTRIBUTION ACTIVITY</h2>
+          <p class="font-mono text-xs text-slateMuted mt-1">MY DEVELOPMENT ACTIVITY OVER TIME</p>
+        </div>
+        <div class="inline-flex rounded-lg bg-card p-1 border border-borderDark text-xs font-mono">
+          <button onclick="setRange(30)" id="range30" class="px-2.5 py-1 rounded bg-crimson text-white font-semibold">30D</button>
+          <button onclick="setRange(90)" id="range90" class="px-2.5 py-1 rounded text-slateMuted hover:text-frost">90D</button>
+        </div>
+      </div>
+
+      <div class="card-surface rounded-xl p-5 sm:p-8">
+        <h3 class="text-center font-mono text-sm sm:text-base font-bold text-frost tracking-wider mb-6">
+          ARDIT CENO - CONTRIBUTION ACTIVITY
+        </h3>
+        <div class="relative h-72 sm:h-80 w-full">
+          <canvas id="contributionChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONNECT WITH ME -->
+    <section id="connect" class="pt-6 text-center space-y-6">
+      <div class="border-b border-borderDark pb-3 text-left flex items-center justify-between">
+        <h2 class="text-xl sm:text-2xl font-bold tracking-wider text-frost uppercase">CONNECT WITH ME</h2>
+        <span class="font-mono text-xs text-crimson">05 // CONTACT</span>
+      </div>
+      <h3 class="text-xl sm:text-2xl font-bold text-frost">LET'S BUILD SOMETHING MEANINGFUL.</h3>
+      <p class="text-slateMuted max-w-xl mx-auto text-sm sm:text-base">
+        Always interested in technology, engineering, creative ideas, and meaningful collaborations.
+      </p>
+      <div class="pt-6 border-t border-crimson/50">
+        <p class="text-2xl font-extrabold tracking-widest text-frost">ARDIT CENO</p>
+        <p class="font-mono text-xs text-slateMuted mt-1">ENGINEERED WITH PURPOSE · BUILT WITH PRECISION</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- TOKEN MODAL FOR PRIVATE REPOS -->
+  <div id="tokenModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="card-surface rounded-xl max-w-md w-full p-6 space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="font-bold text-frost">GitHub Personal Access Token</h3>
+        <button onclick="closeTokenModal()" class="text-slateMuted hover:text-frost">✕</button>
+      </div>
+      <p class="text-xs text-slateMuted leading-relaxed">
+        Vendos token-in tënd GitHub (me lejet <code class="text-crimson">repo</code> dhe <code class="text-crimson">read:user</code>) që kjo faqe të lexojë automatikisht edhe <strong>depot dhe kontributet private</strong>. Ruhet vetëm në shfletuesin tënd.
+      </p>
+      <input id="tokenInput" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
+             class="w-full px-3 py-2 rounded-lg bg-obsidian border border-borderDark text-xs font-mono text-frost focus:outline-none focus:border-crimson" />
+      <div class="flex justify-end gap-2">
+        <button onclick="clearToken()" class="px-3 py-1.5 rounded-lg bg-obsidian text-xs font-mono text-slateMuted hover:text-frost">Clear</button>
+        <button onclick="saveToken()" class="px-4 py-1.5 rounded-lg bg-crimson text-xs font-mono font-bold text-white hover:bg-crimsonDark">Save & Sync</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const USERNAME = 'ArditCeno';
+    let currentScope = 'all';
+    let currentRange = 30;
+    let allRepos = [];
+    let chartInstance = null;
+
+    const TECH_STACK = [
+      { title: 'LANGUAGES', items: ['Java', 'Python', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3'] },
+      { title: 'BACKEND & FRAMEWORKS', items: ['Spring Boot', 'FastAPI', 'React', 'React Native', 'Expo'] },
+      { title: 'AI / 3D / DATABASES', items: ['TensorFlow', 'Three.js', 'Supabase', 'PostgreSQL'] },
+      { title: 'TOOLS & DEVELOPMENT', items: ['Git', 'GitHub', 'Docker', 'Vercel', 'VS Code'] }
+    ];
+
+    const LANG_COLORS = {
+      Java: '#b07219', Python: '#3572A5', JavaScript: '#f1e05a', TypeScript: '#3178c6',
+      HTML: '#e34c26', CSS: '#563d7c', Shell: '#89e051', C: '#555555', 'C++': '#f34b7d'
+    };
+
+    function renderTechStack() {
+      const container = document.getElementById('techStackContainer');
+      container.innerHTML = TECH_STACK.map(cat => `
+        <div class="card-surface rounded-xl p-6 space-y-4">
+          <h3 class="font-mono text-xs font-bold tracking-widest text-crimson uppercase">${cat.title}</h3>
+          <div class="flex flex-wrap gap-2">
+            ${cat.items.map(item => `<span class="px-3 py-1.5 rounded-lg bg-obsidian border border-borderDark text-xs font-mono text-frost">${item}</span>`).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function copyJavaCode() {
+      const code = document.getElementById('javaCodeBlock').innerText;
+      navigator.clipboard.writeText(code);
+      document.getElementById('copyJavaText').innerText = 'Copied!';
+      setTimeout(() => document.getElementById('copyJavaText').innerText = 'Copy', 2000);
+    }
+
+    function openTokenModal() {
+      document.getElementById('tokenInput').value = localStorage.getItem('gh_pat') || '';
+      document.getElementById('tokenModal').classList.remove('hidden');
+    }
+    function closeTokenModal() { document.getElementById('tokenModal').classList.add('hidden'); }
+    function saveToken() {
+      const val = document.getElementById('tokenInput').value.trim();
+      if (val) localStorage.setItem('gh_pat', val);
+      closeTokenModal();
+      loadGitHubData();
+    }
+    function clearToken() {
+      localStorage.removeItem('gh_pat');
+      document.getElementById('tokenInput').value = '';
+      closeTokenModal();
+      loadGitHubData();
+    }
+
+    function setScope(scope) {
+      currentScope = scope;
+      document.getElementById('btnScopeAll').className = scope === 'all'
+        ? 'px-2.5 py-1.5 rounded-md bg-crimson text-white font-semibold transition'
+        : 'px-2.5 py-1.5 rounded-md text-slateMuted hover:text-frost transition';
+      document.getElementById('btnScopePublic').className = scope === 'public'
+        ? 'px-2.5 py-1.5 rounded-md bg-crimson text-white font-semibold transition'
+        : 'px-2.5 py-1.5 rounded-md text-slateMuted hover:text-frost transition';
+      document.getElementById('dataScopeBadge').innerText = scope === 'all' ? 'ALL REPOSITORIES' : 'PUBLIC ONLY';
+      document.getElementById('statsScopeSubtitle').innerText = scope === 'all'
+        ? 'LIVE GITHUB STATISTICS · ALL REPOSITORIES'
+        : 'LIVE GITHUB STATISTICS · PUBLIC REPOSITORIES';
+      renderReposAndLanguages();
+    }
+
+    async function loadGitHubData() {
+      const token = localStorage.getItem('gh_pat');
+      const headers = token ? { Authorization: `Bearer ${token}` } : {};
+      document.getElementById('tokenBtnLabel').innerText = token ? 'Token Active ✓' : 'Configure GitHub Token';
+
+      try {
+        const repoUrl = token
+          ? 'https://api.github.com/user/repos?per_page=100&affiliation=owner&sort=updated'
+          : `https://api.github.com/users/${USERNAME}/repos?per_page=100&sort=updated`;
+
+        const res = await fetch(repoUrl, { headers });
+        if (res.ok) {
+          allRepos = await res.json();
+          renderReposAndLanguages();
+        }
+
+        if (token) {
+          const gqlQuery = {
+            query: `query($login: String!) {
+              user(login: $login) {
+                contributionsCollection {
+                  totalCommitContributions
+                  totalPullRequestContributions
+                  totalIssueContributions
+                  restrictedContributionsCount
+                  contributionCalendar {
+                    totalContributions
+                    weeks { contributionDays { date contributionCount } }
+                  }
+                }
+              }
+            }`,
+            variables: { login: USERNAME }
+          };
+          const gqlRes = await fetch('https://api.github.com/graphql', {
+            method: 'POST',
+            headers: { ...headers, 'Content-Type': 'application/json' },
+            body: JSON.stringify(gqlQuery)
+          });
+          const gqlData = await gqlRes.json();
+          if (gqlData?.data?.user) {
+            const c = gqlData.data.user.contributionsCollection;
+            document.getElementById('statCommits').innerText = c.totalCommitContributions + c.restrictedContributionsCount;
+            document.getElementById('statPRs').innerText = c.totalPullRequestContributions;
+            document.getElementById('statIssues').innerText = c.totalIssueContributions;
+            document.getElementById('streakTotal').innerText = c.contributionCalendar.totalContributions;
+            const days = c.contributionCalendar.weeks.flatMap(w => w.contributionDays);
+            updateChartFromDays(days);
+            return;
+          }
+        }
+        renderFallbackChart();
+      } catch (e) {
+        renderFallbackChart();
+      }
+    }
+
+    function renderReposAndLanguages() {
+      const filtered = currentScope === 'public' ? allRepos.filter(r => !r.private) : allRepos;
+      const stars = filtered.reduce((acc, r) => acc + (r.stargazers_count || 0), 0);
+      document.getElementById('statStars').innerText = stars;
+      document.getElementById('statRepos').innerText = filtered.length;
+      document.getElementById('repoCountBadge').innerText = filtered.length;
+
+      // Languages
+      const langMap = {};
+      filtered.forEach(r => { if (r.language) langMap[r.language] = (langMap[r.language] || 0) + 1; });
+      const total = Object.values(langMap).reduce((a, b) => a + b, 0) || 1;
+      const sorted = Object.entries(langMap).sort((a, b) => b[1] - a[1]);
+
+      document.getElementById('languageProgressBar').innerHTML = sorted.map(([lang, count]) => {
+        const pct = ((count / total) * 100).toFixed(1);
+        const color = LANG_COLORS[lang] || '#EF223C';
+        return `<div style="width:${pct}%;background:${color}" title="${lang}: ${pct}%"></div>`;
+      }).join('');
+
+      document.getElementById('languageBreakdownList').innerHTML = sorted.slice(0, 8).map(([lang, count]) => {
+        const pct = ((count / total) * 100).toFixed(1);
+        const color = LANG_COLORS[lang] || '#EF223C';
+        return `<div class="flex items-center justify-between">
+          <span class="flex items-center gap-2 text-frost"><span class="w-2.5 h-2.5 rounded-full" style="background:${color}"></span>${lang}</span>
+          <span class="text-slateMuted">${pct}%</span>
+        </div>`;
+      }).join('');
+
+      // Repositories Grid
+      document.getElementById('repositoriesGrid').innerHTML = filtered.slice(0, 12).map(r => `
+        <a href="${r.html_url}" target="_blank" class="p-4 rounded-xl bg-obsidian border border-borderDark hover:border-crimson/50 transition flex flex-col justify-between space-y-3">
+          <div>
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-mono text-sm font-bold text-frost truncate">${r.name}</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded ${r.private ? 'bg-crimson/20 text-crimson' : 'bg-card text-slateMuted'}">${r.private ? 'PRIVATE' : 'PUBLIC'}</span>
+            </div>
+            <p class="text-xs text-slateMuted mt-2 line-clamp-2">${r.description || 'Engineered repository by Ardit Ceno.'}</p>
+          </div>
+          <div class="flex items-center justify-between text-[11px] font-mono text-slateMuted">
+            <span>${r.language || 'Code'}</span>
+            <span>★ ${r.stargazers_count || 0}</span>
+          </div>
+        </a>
+      `).join('');
+    }
+
+    function setRange(days) {
+      currentRange = days;
+      document.getElementById('range30').className = days === 30 ? 'px-2.5 py-1 rounded bg-crimson text-white font-semibold' : 'px-2.5 py-1 rounded text-slateMuted hover:text-frost';
+      document.getElementById('range90').className = days === 90 ? 'px-2.5 py-1 rounded bg-crimson text-white font-semibold' : 'px-2.5 py-1 rounded text-slateMuted hover:text-frost';
+      loadGitHubData();
+    }
+
+    function updateChartFromDays(days) {
+      const slice = days.slice(-currentRange);
+      drawChart(slice.map(d => d.date.slice(8)), slice.map(d => d.contributionCount));
+    }
+
+    function renderFallbackChart() {
+      const sample = [3,0,0,0,0,0,0,0,16,20,0,4,0,2,0,0,2,9,0,1,0,0,42,2,7,0,0,0,23];
+      const labels = sample.map((_, i) => String(i + 1));
+      drawChart(labels, sample);
+    }
+
+    function drawChart(labels, values) {
+      const ctx = document.getElementById('contributionChart').getContext('2d');
+      if (chartInstance) chartInstance.destroy();
+      chartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [{
+            label: 'Contributions',
+            data: values,
+            borderColor: '#EF223C',
+            backgroundColor: 'rgba(239, 34, 60, 0.14)',
+            borderWidth: 3,
+            tension: 0.35,
+            fill: true,
+            pointBackgroundColor: '#DFE5EB',
+            pointBorderColor: '#EF223C',
+            pointRadius: 4,
+            pointHoverRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { color: '#1e212b', borderDash: [4, 4] }, ticks: { color: '#9AA3AE', font: { family: 'JetBrains Mono' } } },
+            y: { beginAtZero: true, grid: { color: '#1e212b', borderDash: [4, 4] }, ticks: { color: '#9AA3AE', font: { family: 'JetBrains Mono' } } }
+          }
+        }
+      });
+    }
+
+    renderTechStack();
+    loadGitHubData();
+  </script>
+</body>
+</html>
