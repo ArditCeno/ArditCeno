@@ -1,14 +1,18 @@
  <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=111217&fontColor=DFE5EB&text=ARDIT%20CENO&fontSize=48&fontAlignY=40&desc=SOFTWARE%20ENGINEERING%20%2F%20APPLIED%20AI%20%2F%20DEVELOPMENT&descSize=12&descAlignY=62" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=rect&height=7&color=EF223C" width="100%" />
 
-<img src="https://github.com/ArditCeno.png" width="105" height="105" alt="Ardit Ceno" />
+```text
+    _    ____  ____ ___ _____
+   / \  |  _ \|  _ |_ _|_   _|
+  / _ \ | |_) | | | | |  | |
+ / ___ \|  _ <| |_| | |  | |
+/_/   \_|_| \_\____|___| |_|
+```
 
-# ARDIT CENO
+### SOFTWARE ENGINEER · DEVELOPER · BUILDER
 
-**SOFTWARE ENGINEER · FULL-STACK DEVELOPER · TECHNOLOGY ENTHUSIAST**
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=400&size=14&duration=3500&pause=1600&color=DFE5EB&center=true&vCenter=true&width=650&lines=Building+software+with+purpose.;Engineering+scalable+digital+experiences.;Exploring+AI+and+intelligent+systems.;Turning+ideas+into+working+solutions." alt="Introduction" />
+**Building intelligent systems. Engineering meaningful experiences.**
 
 [PORTFOLIO](https://arditceno.vercel.app/) · [LINKEDIN](https://www.linkedin.com/in/ardit-ceno-a674b5307/) · [GITHUB](https://github.com/ArditCeno)
 
@@ -16,130 +20,137 @@
 
 ---
 
-### 01 — PROFILE
+## 01 — ABOUT ME
 
-I'm **Ardit Ceno**, a Software Engineer focused on building scalable applications, intelligent systems, and meaningful digital experiences.
+I'm **Ardit Ceno**, a software developer passionate about engineering, artificial intelligence, and building meaningful digital products.
 
-I enjoy combining software engineering, artificial intelligence, backend architecture, and modern frontend development to transform ideas into practical solutions.
+I enjoy working across software development, backend architecture, intelligent systems, and interactive digital experiences.
 
-My interests include:
+My engineering principles:
 
-- Full-stack software engineering
-- Backend architecture and enterprise applications
-- Artificial Intelligence and Machine Learning
-- Cybersecurity and intelligent automation
-- UI/UX engineering and interactive experiences
+- Precision in implementation.
+- Creativity in problem-solving.
+- Continuous learning and improvement.
+- Turning ambitious ideas into working products.
 
-**My philosophy:** Build with precision. Solve with intelligence. Create with purpose.
+```java
+public class ArditCeno {
 
----
+    String role = "Software Developer";
+    String location = "Tirana, Albania";
 
-### 02 — SELECTED WORK
+    String[] interests = {
+        "Software Engineering",
+        "Artificial Intelligence",
+        "Full-Stack Development",
+        "3D Experiences",
+        "System Design"
+    };
 
-Four projects. Different challenges. One engineering mindset.
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-**01 / NEURO-COGNITIVE INFORMATION DESIGN**
-
-<a href="https://arditceno.github.io/Neuro-Cognitive-Information-Design/">
-<img src="https://img.shields.io/badge/EXPLORE%20PROJECT-EF223C?style=flat-square&labelColor=111217" />
-</a>
-
-An interactive project exploring Neuro-Cognitive Information Design and the relationship between information presentation, human cognition, attention, and comprehension.
-
-**Focus:** Cognitive Design · Information Architecture · User Experience
-
-<a href="https://arditceno.github.io/Neuro-Cognitive-Information-Design/">OPEN LIVE PROJECT ↗</a>
-
-</td>
-<td width="50%" valign="top">
-
-**02 / VODAFONE ALBANIA — TOBi2**
-
-<a href="https://vodafone-al-internship.onrender.com">
-<img src="https://img.shields.io/badge/LIVE%20DEMO-EF223C?style=flat-square&labelColor=111217" />
-</a>
-
-An enterprise-oriented virtual assistant simulation developed in the context of my Vodafone Albania internship.
-
-Exploring intelligent customer support, authentication, bilingual interaction, and AI-powered functionality.
-
-**Focus:** Enterprise Software · AI Integration · Backend Engineering
-
-<a href="https://vodafone-al-internship.onrender.com">OPEN LIVE PROJECT ↗</a>
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-**03 / GEOSENTINEL**
-
-<a href="https://geo-sentinel-landing-page.vercel.app/">
-<img src="https://img.shields.io/badge/LIVE%20PROJECT-EF223C?style=flat-square&labelColor=111217" />
-</a>
-
-A project focused on geospatial intelligence and environmental monitoring, presenting the GeoSentinel concept through a dedicated landing page.
-
-**Focus:** Geospatial Technology · Environmental Intelligence · UI/UX
-
-<a href="https://geo-sentinel-landing-page.vercel.app/">OPEN LIVE PROJECT ↗</a>
-
-</td>
-<td width="50%" valign="top">
-
-**04 / CLOSETAI**
-
-<a href="https://github.com/ArditCeno/ClosetAI">
-<img src="https://img.shields.io/badge/VIEW%20REPOSITORY-EF223C?style=flat-square&labelColor=111217" />
-</a>
-
-An AI-powered digital wardrobe featuring an immersive 3D environment, intelligent clothing recognition, wardrobe management, and personalized styling.
-
-**Focus:** Artificial Intelligence · 3D Development · Mobile Engineering
-
-**Stack:** React Native · Expo · Three.js · TensorFlow.js · Spring Boot · FastAPI · Supabase
-
-<a href="https://github.com/ArditCeno/ClosetAI">EXPLORE SOURCE CODE ↗</a>
-
-</td>
-</tr>
-</table>
+    String philosophy =
+        "Build with purpose. Engineer with precision.";
+}
+```
 
 ---
 
-### 03 — TECHNOLOGY STACK
+## 02 — SELECTED PROJECTS
 
-**LANGUAGES**
+<div align="center">
+
+<img src="https://arditceno.github.io/Neuro-Cognitive-Information-Design/assets/logo.png" width="100" alt="NCID original logo" />
+
+### NEURO-COGNITIVE INFORMATION DESIGN
+
+**01 / Research · Cognitive Design · Digital Experience**
+
+An interactive project exploring neuro-cognitive information design and the relationship between information, human cognition, and digital experiences.
+
+[VIEW LIVE PROJECT ↗](https://arditceno.github.io/Neuro-Cognitive-Information-Design/)
+
+</div>
+
+---
+
+<div align="center">
+
+<img src="https://www.google.com/s2/favicons?domain=vodafone-al-internship.onrender.com&sz=128" width="85" alt="Vodafone website icon" />
+
+### VODAFONE ALBANIA — INTERNSHIP
+
+**02 / Enterprise · Software Development**
+
+A software project developed in the context of my Vodafone Albania internship.
+
+[VIEW LIVE PROJECT ↗](https://vodafone-al-internship.onrender.com)
+
+</div>
+
+---
+
+<div align="center">
+
+<img src="https://www.google.com/s2/favicons?domain=geo-sentinel-landing-page.vercel.app&sz=128" width="85" alt="GeoSentinel website icon" />
+
+### GEOSENTINEL
+
+**03 / Geospatial Technology · Digital Experience**
+
+A dedicated digital experience presenting the GeoSentinel project.
+
+[VIEW LIVE PROJECT ↗](https://geo-sentinel-landing-page.vercel.app/)
+
+</div>
+
+---
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/CLOSET.AI-111217?style=for-the-badge&logoColor=DFE5EB" height="40" alt="ClosetAI wordmark" />
+
+### CLOSETAI
+
+**04 / Artificial Intelligence · 3D · Fashion Technology**
+
+An AI-powered digital wardrobe combining an immersive 3D environment, intelligent clothing recognition, wardrobe management, and personalized styling.
+
+**Technologies:** React Native · Expo · Three.js · TensorFlow.js · Spring Boot · FastAPI · Supabase
+
+[EXPLORE REPOSITORY ↗](https://github.com/ArditCeno/ClosetAI)
+
+</div>
+
+---
+
+## 03 — TECHNOLOGY STACK
+
+### LANGUAGES
 
 <p>
-<img src="https://skillicons.dev/icons?i=java,python,js,ts,c,cpp,html,css&theme=dark" />
+<img src="https://skillicons.dev/icons?i=java,python,js,ts,html,css&theme=dark" />
 </p>
 
-**BACKEND & FRAMEWORKS**
+### BACKEND & FRAMEWORKS
 
 <p>
-<img src="https://skillicons.dev/icons?i=spring,fastapi,nodejs,react&theme=dark" />
+<img src="https://skillicons.dev/icons?i=spring,fastapi,react,reactnative,expo&theme=dark" />
 </p>
 
-**AI / DATA / DATABASES**
+### AI / 3D / DATA
 
 <p>
-<img src="https://skillicons.dev/icons?i=tensorflow,postgres,supabase,mysql,sqlite&theme=dark" />
+<img src="https://skillicons.dev/icons?i=tensorflow,threejs,supabase,postgres&theme=dark" />
 </p>
 
-**TOOLS & DEVELOPMENT**
+### TOOLS & DEVELOPMENT
 
 <p>
-<img src="https://skillicons.dev/icons?i=git,github,docker,postman,vercel,vscode&theme=dark" />
+<img src="https://skillicons.dev/icons?i=git,github,docker,vercel,vscode&theme=dark" />
 </p>
 
 ---
 
-### 04 — GITHUB ANALYTICS
+## 04 — GITHUB ANALYTICS
 
 <div align="center">
 
@@ -147,35 +158,29 @@ An AI-powered digital wardrobe featuring an immersive 3D environment, intelligen
 
 <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArditCeno&layout=compact&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&langs_count=8" />
 
-<br/>
+<br/><br/>
 
-<img width="75%" src="https://streak-stats.demolab.com?user=ArditCeno&hide_border=true&background=111217&ring=EF223C&fire=EF223C&currStreakLabel=DFE5EB&sideLabels=DFE5EB&dates=9AA3AE" />
+<img width="85%" src="https://streak-stats.demolab.com?user=ArditCeno&hide_border=true&background=111217&ring=EF223C&fire=EF223C&currStreakLabel=EF223C&sideLabels=DFE5EB&dates=9AA3AE&currStreakNum=DFE5EB&sideNums=DFE5EB" />
 
 </div>
 
 ---
 
-### 05 — ENGINEERING MINDSET
-
-```text
-ARDIT CENO / DEVELOPMENT LOG
-
-[01] Design before implementation.
-[02] Architecture before complexity.
-[03] Security as a foundation.
-[04] Intelligence through innovation.
-[05] Continuous improvement.
-
-STATUS: ALWAYS BUILDING.
-```
-
----
-
-### 06 — LET'S CONNECT
+## 05 — CONTRIBUTION ACTIVITY
 
 <div align="center">
 
-Interested in software engineering, AI, innovative projects, or collaboration?
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=ArditCeno&bg_color=111217&color=DFE5EB&line=EF223C&point=DFE5EB&area=true&hide_border=true&custom_title=ARDIT%20CENO%20-%20CONTRIBUTION%20ACTIVITY" width="100%" />
+
+</div>
+
+---
+
+## 06 — CONNECT
+
+<div align="center">
+
+**Interested in building something meaningful? Let's connect.**
 
 <a href="https://www.linkedin.com/in/ardit-ceno-a674b5307/">
 <img src="https://img.shields.io/badge/LINKEDIN-DFE5EB?style=for-the-badge&logo=linkedin&logoColor=111217" />
@@ -191,10 +196,10 @@ Interested in software engineering, AI, innovative projects, or collaboration?
 
 <br/><br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&height=2&color=EF223C&section=footer" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=rect&height=3&color=EF223C" width="100%" />
 
-**ENGINEERED WITH PURPOSE. BUILT FOR IMPACT.**
+**ARDIT CENO**
 
-<sub>© ARDIT CENO · TIRANA, ALBANIA</sub>
+<sub>ENGINEERED WITH PURPOSE · BUILT WITH PRECISION</sub>
 
 </div>
