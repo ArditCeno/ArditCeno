@@ -312,10 +312,12 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 <sub>LIVE GITHUB STATISTICS · ALL REPOSITORIES</sub>
 
 <br/><br/>
+<td width="50%" valign="top">
 
 <img src="https://github-readme-stats.vercel.app/api?username=ArditCeno&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&icon_color=EF223C&rank_icon=github" width="100%" alt="Ardit Ceno GitHub Statistics"/>
 
 <br/><br/>
+<td width="50%" valign="top">
 
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArditCeno&layout=compact&count_private=true&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&langs_count=10" width="100%" alt="Most Used Languages"/>
 
