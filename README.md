@@ -24,8 +24,8 @@
 <img src="https://capsule-render.vercel.app/api?type=rect&height=6&color=EF223C" width="100%"/>
 
 ```text
-   █████╗ ██████╗ ██████╗ ██╗████████╗
-   ██╔══██╗██╔══██╗██╔══██╗██║╚══██╔══╝
+  █████╗ ██████╗ ██████╗ ██╗████████╗
+  ██╔══██╗██╔══██╗██╔══██╗██║╚══██╔══╝
 ███████║██████╔╝██║  ██║██║   ██║
 ██╔══██║██╔══██╗██║  ██║██║   ██║
 ██║  ██║██║  ██║██████╔╝██║   ██║
@@ -37,15 +37,13 @@
 ██║      ██╔══╝  ██║╚██╗██║██║   ██║
 ╚██████╗ ███████╗██║ ╚████║╚██████╔╝
  ╚═════╝ ╚══════╝╚═╝  ╚═══╝ ╚═════╝
-
+```
 ## ABOUT ME
 
 I'm **Ardit Ceno**, a software developer passionate about technology, software engineering, artificial intelligence, and building meaningful digital experiences.
 I enjoy exploring new technologies, solving complex problems, and transforming ideas into functional applications.
 
 My areas of interest include:
-
-
 
 Software Engineering
 Artificial Intelligence
@@ -54,36 +52,19 @@ Backend Development
 3D Development
 Data and Intelligent Systems
 
-
 ```java
 
 public class ArditCeno {
-
-
-
 String name = "Ardit Ceno";
-
 String role = "Software Developer";
-
 String location = "Tirana, Albania";
-
-
-
 String[] interests = {
-
 "Software Engineering",
-
 "Artificial Intelligence",
-
 "Full-Stack Development",
-
 "3D Development",
-
 "Backend Engineering"
-
 };
-
-
 
 String philosophy =
 
@@ -93,15 +74,7 @@ String philosophy =
 
 ```
 
-
-
----
-
-
-
 ## FEATURED PROJECTS
-
-
 
 <div align="center">
 
@@ -109,82 +82,41 @@ String philosophy =
 
 </div>
 
-
-
 <table>
 
 <tr>
 
 <td width="50%" valign="top">
 
-
-
 <div align="center">
-
-
 
 <img src="https://arditceno.github.io/Neuro-Cognitive-Information-Design/assets/logo.png" width="110" alt="NCID Logo"/>
 
-
-
 ### NEURO-COGNITIVE INFORMATION DESIGN
-
-
 
 <sub>01 / INFORMATION DESIGN</sub>
 
-
-
 An interactive digital experience exploring neuro-cognitive information design, human cognition, and the presentation of information.
-
-
-
 <br/>
-
-
-
 <a href="https://arditceno.github.io/Neuro-Cognitive-Information-Design/">
-
 <img src="https://img.shields.io/badge/VISIT%20PROJECT-EF223C?style=for-the-badge&logo=googlechrome&logoColor=white"/>
 
 </a>
 
-
-
 </div>
-
-
-
 </td>
 
 <td width="50%" valign="top">
 
-
-
 <div align="center">
-
-
 
 <img src="assets/tobi.svg" width="110" height="110" alt="TOBI Robot"/>
 
-
-
 ### VODAFONE ALBANIA
-
-
-
 <sub>02 / INTERNSHIP PROJECT</sub>
-
-
-
 A software development project associated with my Vodafone Albania internship experience.
 
-
-
 <br/>
-
-
-
 <a href="https://vodafone-al-internship.onrender.com">
 
 <img src="https://img.shields.io/badge/VISIT%20PROJECT-EF223C?style=for-the-badge&logo=googlechrome&logoColor=white"/>
@@ -412,24 +344,13 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 
 
 <div align="center">
-
-
-
 <sub>MY DEVELOPMENT ACTIVITY OVER TIME</sub>
-
-
 
 <br/><br/>
 
-
-
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=ArditCeno&bg_color=111217&color=DFE5EB&line=EF223C&point=DFE5EB&area=true&hide_border=true&custom_title=ARDIT%20CENO%20-%20CONTRIBUTION%20ACTIVITY" width="100%" alt="Ardit Ceno Contribution Activity"/>
 
-
-
 <br/>
-
-
 
 <a href="https://github.com/ArditCeno">
 
@@ -437,35 +358,18 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 
 </a>
 
-
-
 </div>
-
-
-
 ---
-
-
 
 ## CONNECT WITH ME
 
-
-
 <div align="center">
-
-
 
 ### LET'S BUILD SOMETHING MEANINGFUL.
 
-
-
 Always interested in technology, engineering, creative ideas, and meaningful collaborations.
 
-
-
 <br/>
-
-
 
 <a href="https://arditceno.vercel.app/">
 
@@ -473,15 +377,11 @@ Always interested in technology, engineering, creative ideas, and meaningful col
 
 </a>
 
-
-
 <a href="https://www.linkedin.com/in/ardit-ceno-a674b5307/">
 
 <img src="https://img.shields.io/badge/LINKEDIN-DFE5EB?style=for-the-badge&logo=linkedin&logoColor=111217"/>
 
 </a>
-
-
 
 <a href="https://github.com/ArditCeno">
 
@@ -489,23 +389,13 @@ Always interested in technology, engineering, creative ideas, and meaningful col
 
 </a>
 
-
-
 <br/><br/>
-
-
 
 <img src="https://capsule-render.vercel.app/api?type=rect&height=5&color=EF223C" width="100%"/>
 
-
-
 # ARDIT CENO
 
-
-
 <sub>ENGINEERED WITH PURPOSE · BUILT WITH PRECISION</sub>
-
-
 
 </div> 
     String[] focus = {
