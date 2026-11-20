@@ -42,8 +42,9 @@
 
 ---
 
-## ~~ ABOUT ME ~~
-
+<div align="center">
+## ABOUT ME
+</div>
 I'm **Ardit Ceno**, a software developer passionate about technology, software engineering, artificial intelligence, and building meaningful digital experiences.
 
 I enjoy exploring new technologies, solving complex problems, and transforming ideas into functional applications.
@@ -79,7 +80,7 @@ public class ArditCeno {
 
 ---
 
-## ~~ FEATURED PROJECTS ~~
+## FEATURED PROJECTS 
 
 <div align="center">
 <sub>SELECTED WORK · PROJECTS · ENGINEERING</sub>
