@@ -26,17 +26,17 @@
 ```text
   █████╗ ██████╗ ██████╗ ██╗████████╗
   ██╔══██╗██╔══██╗██╔══██╗██║╚══██╔══╝
-███████║██████╔╝██║  ██║██║   ██║
-██╔══██║██╔══██╗██║  ██║██║   ██║
-██║  ██║██║  ██║██████╔╝██║   ██║
-╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝   ╚═╝
+ ███████║██████╔╝██║  ██║██║   ██║
+ ██╔══██║██╔══██╗██║  ██║██║   ██║
+ ██║  ██║██║  ██║██████╔╝██║   ██║
+ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝   ╚═╝
 
-██████╗ ███████╗███╗   ██╗ ██████╗
-██╔════╝ ██╔════╝████╗  ██║██╔═══██╗
-██║      █████╗  ██╔██╗ ██║██║   ██║
-██║      ██╔══╝  ██║╚██╗██║██║   ██║
-╚██████╗ ███████╗██║ ╚████║╚██████╔╝
- ╚═════╝ ╚══════╝╚═╝  ╚═══╝ ╚═════╝
+ ██████╗ ███████╗███╗   ██╗ ██████╗
+ ██╔════╝ ██╔════╝████╗  ██║██╔═══██╗
+ ██║      █████╗  ██╔██╗ ██║██║   ██║
+ ██║      ██╔══╝  ██║╚██╗██║██║   ██║
+ ╚██████╗ ███████╗██║ ╚████║╚██████╔╝
+  ╚═════╝ ╚══════╝╚═╝  ╚═══╝ ╚═════╝
 ```
 ## ABOUT ME
 
@@ -46,24 +46,38 @@ I enjoy exploring new technologies, solving complex problems, and transforming i
 My areas of interest include:
 
 Software Engineering
+
 Artificial Intelligence
+
 Full-Stack Development
+
 Backend Development
+
 3D Development
+
 Data and Intelligent Systems
 
 ```java
 
 public class ArditCeno {
 String name = "Ardit Ceno";
+
 String role = "Software Developer";
+
 String location = "Tirana, Albania";
+
 String[] interests = {
+
 "Software Engineering",
+
 "Artificial Intelligence",
+
 "Full-Stack Development",
+
 "3D Development",
+
 "Backend Engineering"
+
 };
 
 String philosophy =
@@ -395,16 +409,3 @@ Always interested in technology, engineering, creative ideas, and meaningful col
 
 # ARDIT CENO
 
-<sub>ENGINEERED WITH PURPOSE · BUILT WITH PRECISION</sub>
-
-</div> 
-    String[] focus = {
-        "Software Engineering",
-        "Artificial Intelligence",
-        "Full-Stack & Backend Development",
-        "3D Interactive Systems",
-        "Data & Intelligent Systems"
-    };
-
-    String philosophy = "Build with purpose. Engineer with precision.";
-}
