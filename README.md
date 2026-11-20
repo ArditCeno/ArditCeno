@@ -305,7 +305,6 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 
 ---
 
-
 ## GITHUB STATISTICS
 
 <div align="center">
@@ -314,11 +313,11 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 
 <br/><br/>
 
-<img src="https://github-readme-stats.vercel.app/api?username=ArditCeno&show_icons=true&include_all_commits=true&count_private=true&cache_seconds=1800&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&icon_color=EF223C&rank_icon=github" width="100%" alt="Ardit Ceno GitHub Statistics"/>
+<img src="https://github-readme-stats.vercel.app/api?username=ArditCeno&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&icon_color=EF223C&rank_icon=github" width="100%" alt="Ardit Ceno GitHub Statistics"/>
 
 <br/><br/>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArditCeno&layout=compact&count_private=true&cache_seconds=1800&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&langs_count=10" width="100%" alt="Most Used Languages"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArditCeno&layout=compact&count_private=true&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&langs_count=10" width="100%" alt="Most Used Languages"/>
 
 <br/><br/>
 
@@ -359,11 +358,9 @@ Always interested in technology, engineering, creative ideas, and meaningful col
 <a href="https://arditceno.vercel.app/">
   <img src="https://img.shields.io/badge/PORTFOLIO-DFE5EB?style=for-the-badge&logo=vercel&logoColor=111217"/>
 </a>
-
 <a href="https://www.linkedin.com/in/ardit-ceno-a674b5307/">
   <img src="https://img.shields.io/badge/LINKEDIN-DFE5EB?style=for-the-badge&logo=linkedin&logoColor=111217"/>
 </a>
-
 <a href="https://github.com/ArditCeno">
   <img src="https://img.shields.io/badge/GITHUB-EF223C?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
@@ -375,37 +372,3 @@ Always interested in technology, engineering, creative ideas, and meaningful col
 # ARDIT CENO
 
 </div>
-## CONNECT WITH ME
-
-<div align="center">
-
-### LET'S BUILD SOMETHING MEANINGFUL.
-
-Always interested in technology, engineering, creative ideas, and meaningful collaborations.
-
-<br/>
-
-<a href="https://arditceno.vercel.app/">
-
-<img src="https://img.shields.io/badge/PORTFOLIO-DFE5EB?style=for-the-badge&logo=vercel&logoColor=111217"/>
-
-</a>
-
-<a href="https://www.linkedin.com/in/ardit-ceno-a674b5307/">
-
-<img src="https://img.shields.io/badge/LINKEDIN-DFE5EB?style=for-the-badge&logo=linkedin&logoColor=111217"/>
-
-</a>
-
-<a href="https://github.com/ArditCeno">
-
-<img src="https://img.shields.io/badge/GITHUB-EF223C?style=for-the-badge&logo=github&logoColor=white"/>
-
-</a>
-
-<br/><br/>
-
-<img src="https://capsule-render.vercel.app/api?type=rect&height=5&color=EF223C" width="100%"/>
-
-# ARDIT CENO
-
