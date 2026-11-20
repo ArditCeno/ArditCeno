@@ -301,21 +301,28 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 
 ## GITHUB STATISTICS
 
+## GITHUB STATISTICS
+
 <div align="center">
 
 <sub>LIVE GITHUB STATISTICS · ALL REPOSITORIES</sub>
 
 <br/><br/>
 
-<img src="https://github-readme-stats.vercel.app/api?username=ArditCeno&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&icon_color=EF223C&rank_icon=github&v=1" width="100%" alt="Ardit Ceno GitHub Statistics"/>
+<table width="100%">
+  <tr>
+    <td width="50%" align="center">
+      <img src="https://github-readme-stats.vercel.app/api?username=ArditCeno&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&icon_color=EF223C&rank_icon=github&v=1" width="100%" alt="Ardit Ceno GitHub Statistics"/>
+    </td>
+    <td width="50%" align="center">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArditCeno&layout=compact&count_private=true&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&langs_count=10&v=1" width="100%" alt="Most Used Languages"/>
+    </td>
+  </tr>
+</table>
 
-<br/><br/>
+<br/>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArditCeno&layout=compact&count_private=true&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&langs_count=10&v=1" width="100%" alt="Most Used Languages"/>
-
-<br/><br/>
-
-<img src="https://streak-stats.demolab.com?user=ArditCeno&hide_border=true&background=111217&ring=EF223C&fire=EF223C&currStreakLabel=EF223C&sideLabels=DFE5EB&dates=9AA3AE&currStreakNum=DFE5EB&sideNums=DFE5EB&v=1" width="100%" alt="GitHub Streak"/>
+<img src="https://streak-stats.demolab.com?user=ArditCeno&hide_border=true&background=111217&ring=EF223C&fire=EF223C&currStreakLabel=EF223C&sideLabels=DFE5EB&dates=9AA3AE&currStreakNum=DFE5EB&sideNums=DFE5EB&v=1" width="80%" alt="GitHub Streak"/>
 
 </div>
 
