@@ -281,19 +281,13 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 
 ### AI / 3D / DATABASES
 
-
-
 <p>
 
 <img src="https://skillicons.dev/icons?i=tensorflow,threejs,supabase,postgres&theme=dark"/>
 
 </p>
 
-
-
 ### TOOLS & DEVELOPMENT
-
-
 
 <p>
 
@@ -312,18 +306,16 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 <sub>LIVE GITHUB STATISTICS · ALL REPOSITORIES</sub>
 
 <br/><br/>
-<td width="50%" valign="top">
 
-<img src="https://github-readme-stats.vercel.app/api?username=ArditCeno&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&icon_color=EF223C&rank_icon=github" width="100%" alt="Ardit Ceno GitHub Statistics"/>
-
-<br/><br/>
-<td width="50%" valign="top">
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArditCeno&layout=compact&count_private=true&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&langs_count=10" width="100%" alt="Most Used Languages"/>
+<img src="https://github-readme-stats.vercel.app/api?username=ArditCeno&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&icon_color=EF223C&rank_icon=github&v=1" width="100%" alt="Ardit Ceno GitHub Statistics"/>
 
 <br/><br/>
 
-<img src="https://streak-stats.demolab.com?user=ArditCeno&hide_border=true&background=111217&ring=EF223C&fire=EF223C&currStreakLabel=EF223C&sideLabels=DFE5EB&dates=9AA3AE&currStreakNum=DFE5EB&sideNums=DFE5EB" width="100%" alt="GitHub Streak"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArditCeno&layout=compact&count_private=true&hide_border=true&bg_color=111217&title_color=DFE5EB&text_color=DFE5EB&langs_count=10&v=1" width="100%" alt="Most Used Languages"/>
+
+<br/><br/>
+
+<img src="https://streak-stats.demolab.com?user=ArditCeno&hide_border=true&background=111217&ring=EF223C&fire=EF223C&currStreakLabel=EF223C&sideLabels=DFE5EB&dates=9AA3AE&currStreakNum=DFE5EB&sideNums=DFE5EB&v=1" width="100%" alt="GitHub Streak"/>
 
 </div>
 
@@ -337,7 +329,7 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 
 <br/><br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=ArditCeno&bg_color=111217&color=DFE5EB&line=EF223C&point=DFE5EB&area=true&hide_border=true&custom_title=ARDIT%20CENO%20-%20CONTRIBUTION%20ACTIVITY" width="100%" alt="Ardit Ceno Contribution Activity"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=ArditCeno&bg_color=111217&color=DFE5EB&line=EF223C&point=DFE5EB&area=true&hide_border=true&custom_title=ARDIT%20CENO%20-%20CONTRIBUTION%20ACTIVITY&v=1" width="100%" alt="Ardit Ceno Contribution Activity"/>
 
 <br/><br/>
 
