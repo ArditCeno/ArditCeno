@@ -51,9 +51,7 @@ Artificial Intelligence
 
 Full-Stack Development
 
-Backend Development
-
-3D Development
+Backend Development<br></br>3D Development
 
 Data and Intelligent Systems
 
