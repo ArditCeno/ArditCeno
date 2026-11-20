@@ -42,7 +42,7 @@
 
 ---
 
-## 01 — ABOUT ME
+## ~~ ABOUT ME ~~
 
 I'm **Ardit Ceno**, a software developer passionate about technology, software engineering, artificial intelligence, and building meaningful digital experiences.
 
@@ -79,7 +79,7 @@ public class ArditCeno {
 
 ---
 
-## 02 — FEATURED PROJECTS
+## ~~ FEATURED PROJECTS ~~
 
 <div align="center">
 <sub>SELECTED WORK · PROJECTS · ENGINEERING</sub>
@@ -179,7 +179,7 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 
 ---
 
-## 03 — TECHNOLOGY STACK
+## ~~ TECHNOLOGY STACK ~~
 
 <div align="center">
 <sub>TECHNOLOGIES AND DEVELOPMENT ECOSYSTEM</sub>
@@ -211,7 +211,7 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 
 ---
 
-## 04 — GITHUB STATISTICS
+## ~~ GITHUB STATISTICS ~~
 
 <div align="center">
 
@@ -233,7 +233,7 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 
 ---
 
-## 05 — CONTRIBUTION ACTIVITY
+## ~~ CONTRIBUTION ACTIVITY ~~
 
 <div align="center">
 
@@ -253,7 +253,7 @@ An AI-powered digital wardrobe combining 3D experiences, clothing recognition, w
 
 ---
 
-## 06 — CONNECT WITH ME
+## ~~ CONNECT WITH ME ~~
 
 <div align="center">
 
